@@ -1,4 +1,39 @@
+$black: #000000;
+$pr-color: #2b3942;
+$sec-color: #47545c;
+$c1: #e9a447;
+$c2: #606b70;
+
+.my-0-b {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .weather-app-b {
+  color: $c2;
+
+  &__city {
+    color: $black;
+  }
+
+  &__today {
+    padding: 25px;
+    border-radius: 30px;
+    max-width: 300px;
+    background-color: $pr-color;
+  }
+
+  &__today-title {
+    margin: 0;
+    line-height: 0;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__condition {
     display: flex;
     align-items: center;

@@ -1,6 +1,13 @@
 import "./App.scss";
 import { useEffect, useState } from "react";
 
+function formattedDate(dateStr) {
+  const date = new Date(dateStr.replace(" ", "T"));
+  const formatted = date.toLocaleDateString("pl-PL");
+
+  return formatted;
+}
+
 function FetchWeather({ latitude, longitude }) {
   const [appData, setAppData] = useState(null);
 
@@ -21,15 +28,21 @@ function FetchWeather({ latitude, longitude }) {
 
   return (
     <div className="weather-app-b">
-      <h1>{appData.location.name}</h1>
-      <h2 className="weather-app-b__condition">
-        <img
-          src={appData.current.condition.icon}
-          alt={appData.current.condition.text}
-        />
-        {appData.current.condition.text}
-      </h2>
-      <h2>{console.log(appData.current.condition.text)}</h2>
+      <h1 className="weather-app-b__city">{appData.location.name}</h1>
+      <div className="weather-app-b__today">
+        <div className="weather-app-b__date">
+          <h2 className="weather-app-b__today-title">Dziś</h2>
+          <span>{formattedDate(appData.current.last_updated)}</span>
+        </div>
+        <h3 className="weather-app-b__condition">
+          <img
+            src={appData.current.condition.icon}
+            alt={appData.current.condition.text}
+          />
+          {appData.current.condition.text}
+          {console.log(appData)}
+        </h3>
+      </div>
     </div>
   );
 }
