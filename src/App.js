@@ -34,6 +34,7 @@ function FetchWeather({ latitude, longitude }) {
           <h2 className="weather-app-b__today-title">Dziś</h2>
           <span>{formattedDate(appData.current.last_updated)}</span>
         </div>
+        <h2 className="weather-app-b__temp">{appData.current.temp_c}&deg;C</h2>
         <h3 className="weather-app-b__condition">
           <img
             src={appData.current.condition.icon}

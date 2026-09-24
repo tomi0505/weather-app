@@ -1,3 +1,4 @@
+$white: #ffffff;
 $black: #000000;
 $pr-color: #2b3942;
 $sec-color: #47545c;
@@ -26,6 +27,11 @@ $c2: #606b70;
   &__today-title {
     margin: 0;
     line-height: 0;
+    color: $white;
+  }
+
+  &__temp {
+    color: $c1;
   }
 
   &__date {
