@@ -26,15 +26,37 @@ function Box({
       }
     >
       <div className="weather-app-box-b__date">
-        <h2 className="weather-app-box-b__today-title">{todayTitle}</h2>
+        <h2
+          className={
+            todayTitle === "Dziś"
+              ? "weather-app-box-b__title"
+              : "weather-app-box-b__title weather-app-box-b__title--tommorow"
+          }
+        >
+          {todayTitle}
+        </h2>
         <span>{date}</span>
       </div>
-      <h2 className="weather-app-box-b__temp">{temp}&deg;C</h2>
+      <h2
+        className={
+          todayTitle === "Dziś"
+            ? "weather-app-box-b__temp"
+            : "weather-app-box-b__temp weather-app-box-b__temp--tommorow"
+        }
+      >
+        {temp}&deg;C
+      </h2>
       <h3 className="weather-app-box-b__condition">
         <img src={conditionIcon} alt={conditionText} />
         {conditionText}
       </h3>
-      <div className="weather-app-box-b__chances">
+      <div
+        className={
+          todayTitle === "Dziś"
+            ? "weather-app-box-b__chances"
+            : "weather-app-box-b__chances weather-app-box-b__chances--tommorow"
+        }
+      >
         <div>Szanse na deszcz: {chanceOfRain}%</div>
         <div>Szanse na śnieg: {chanceOfSnow}%</div>
       </div>
@@ -87,7 +109,6 @@ function FetchWeather({ latitude, longitude }) {
           }
         />
       </div>
-      {console.log(appData)}
     </div>
   );
 }

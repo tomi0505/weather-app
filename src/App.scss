@@ -4,6 +4,8 @@ $pr-color: #2b3942;
 $sec-color: #47545c;
 $c1: #e9a447;
 $c2: #606b70;
+$c3: #e6f0ef;
+$c4: #436669;
 
 .my-0-b {
   margin-top: 0;
@@ -44,6 +46,7 @@ $c2: #606b70;
   padding: 25px;
   border-radius: 30px;
   max-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
   background-color: $pr-color;
 
   &__date {
@@ -52,14 +55,22 @@ $c2: #606b70;
     justify-content: space-between;
   }
 
-  &__today-title {
+  &__title {
     margin: 0;
     line-height: 0;
     color: $white;
+
+    &--tommorow {
+      color: $pr-color;
+    }
   }
 
   &__temp {
     color: $c1;
+
+    &--tommorow {
+      color: $pr-color;
+    }
   }
 
   &__condition {
@@ -75,10 +86,16 @@ $c2: #606b70;
     background-color: $sec-color;
     border-radius: 30px;
     color: $white;
+
+    &--tommorow {
+      color: $c4;
+      background-color: $c3;
+    }
   }
 
   &--tommorow {
     margin-top: 20px;
+    background-color: $white;
 
     @media(min-width: 768px) {
       margin-top: 0;
