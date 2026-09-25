@@ -11,17 +11,45 @@ $c2: #606b70;
 }
 
 .weather-app-b {
+  max-width: 620px;
+  margin: 50px auto 0;
   color: $c2;
+
+  @media(min-width: 768px) {
+    margin-top: 120px;
+  }
 
   &__city {
     color: $black;
-  }
+    text-align: center;
 
-  &__today {
-    padding: 25px;
-    border-radius: 30px;
-    max-width: 300px;
-    background-color: $pr-color;
+    @media(min-width: 768px) {
+      text-align: left;
+    }
+  }
+}
+
+.weather-app-boxes-container-b {
+  display: grid;
+  justify-content: center;
+
+  @media(min-width: 768px) {
+    grid-template-columns: 300px 300px;
+    grid-gap: 20px;
+    justify-content: start;
+  }
+}
+
+.weather-app-box-b {
+  padding: 25px;
+  border-radius: 30px;
+  max-width: 300px;
+  background-color: $pr-color;
+
+  &__date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__today-title {
@@ -32,12 +60,6 @@ $c2: #606b70;
 
   &__temp {
     color: $c1;
-  }
-
-  &__date {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   &__condition {
@@ -53,5 +75,13 @@ $c2: #606b70;
     background-color: $sec-color;
     border-radius: 30px;
     color: $white;
+  }
+
+  &--tommorow {
+    margin-top: 20px;
+
+    @media(min-width: 768px) {
+      margin-top: 0;
+    }
   }
 }
